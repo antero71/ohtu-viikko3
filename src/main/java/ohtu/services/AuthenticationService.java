@@ -47,6 +47,16 @@ public class AuthenticationService {
         return b;
     }
 
+    /**
+     * username pitää olla vähintää 3 merkkiä pitkä ja saa sisältää vain 
+     * pienia kirjaimia a-z.
+     * salasana pitää olla vähintään 8 merkkiä pitkä ja pitää sisältää joko 
+     * yhden numeron tai erikoismerkin. (vähintään siis)
+     * @param username
+     * @param password
+     * @return 
+     */
+    
     private boolean invalid(String username, String password) {
         // validity check of username and password
 
