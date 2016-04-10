@@ -24,6 +24,24 @@ public class App {
         return userPwd;
     }
 
+    private void newCommadResponce() {
+        String[] usernameAndPasword = ask();
+        if (auth.createUser(usernameAndPasword[0], usernameAndPasword[1])) {
+            io.print("new user registered");
+        } else {
+            io.print("new user not registered");
+        }
+    }
+
+    private void loginCommandResponce() {
+        String[] usernameAndPasword = ask();
+        if (auth.logIn(usernameAndPasword[0], usernameAndPasword[1])) {
+            io.print("logged in");
+        } else {
+            io.print("wrong username or password");
+        }
+    }
+
     public void run() {
         while (true) {
             String command = io.readLine(">");
@@ -33,20 +51,9 @@ public class App {
             }
 
             if (command.equals("new")) {
-                String[] usernameAndPasword = ask();
-                if (auth.createUser(usernameAndPasword[0], usernameAndPasword[1])) {
-                    io.print("new user registered");
-                } else {
-                    io.print("new user not registered");
-                }
-
+                newCommadResponce();
             } else if (command.equals("login")) {
-                String[] usernameAndPasword = ask();
-                if (auth.logIn(usernameAndPasword[0], usernameAndPasword[1])) {
-                    io.print("logged in");
-                } else {
-                    io.print("wrong username or password");
-                }
+                loginCommandResponce();
             }
 
         }
