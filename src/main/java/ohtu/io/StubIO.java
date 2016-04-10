@@ -8,6 +8,12 @@ public class StubIO implements IO {
     private int i;
     private ArrayList<String> prints;
 
+    
+    /**
+     * IO luokka muuttuvilla parametreilla
+     * @param values 
+     */
+    
     public StubIO(String... values) {
         this.lines = values;
         prints = new ArrayList<String>();

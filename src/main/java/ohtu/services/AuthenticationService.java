@@ -1,8 +1,6 @@
 package ohtu.services;
 
 import ohtu.domain.User;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import ohtu.data_access.UserDao;
@@ -42,27 +40,24 @@ public class AuthenticationService {
         return true;
     }
 
+    private boolean isValid(String string, String pattern) {
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(string);
+        boolean b = m.matches();
+        return b;
+    }
+
     private boolean invalid(String username, String password) {
         // validity check of username and password
 
-
-        if(password.length()<8)
+        if (password.length() < 8) {
             return true;
-        
-        
-        //Pattern p = Pattern.compile("[\\x20-\\x7E]{8,}");
-        Pattern p = Pattern.compile("[a-zA-Z]{8,}");
-        Matcher m = p.matcher(password);
-        boolean b = m.matches();
-        
-        System.out.println(password+" matches "+b);
-        
-     
-        
-        Pattern p2 = Pattern.compile("[a-z]{3,}");
-        Matcher m2 = p2.matcher(username);
-        boolean b2 = m2.matches();
-        
+        }
+
+        boolean b = isValid(password, "[a-zA-Z]{8,}"); // jos on pelkkiä kirjaimia palauttaa
+        // true
+        boolean b2 = isValid(username, "[a-z]{3,}");
+
         return b || !b2;
 
     }
