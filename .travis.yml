@@ -1,2 +1,2 @@
 language: java
-script: mvn install; mvn test; mvn integration-test; mvn jxr:jxr checkstyle:check
+script: mvn install; mvn test; mvn integration-test; mvn -e jxr:jxr checkstyle:check -Dcheckstyle.config.location=my_checks.xml 
