@@ -1,2 +1,2 @@
 language: java
-script: mvn install; mvn test
+script: mvn install; mvn test; mvn integration-test
