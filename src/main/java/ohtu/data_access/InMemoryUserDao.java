@@ -7,44 +7,6 @@ import java.util.List;
 public class InMemoryUserDao implements UserDao {
 
     private List<User> users;
-
-    public void testi(){
-        for(int i = 0; i < 100;i++){
-            System.out.println("testi");
-        }
-        for(int i = 0; i < 100;i++){
-            System.out.println("testi");
-        }
-        for(int i = 0; i < 100;i++){
-            System.out.println("testi");
-        }
-        for(int i = 0; i < 100;i++){
-            System.out.println("testi");
-        }
-        for(int i = 0; i < 100;i++){
-            System.out.println("testi");
-        }
-        for(int i = 0; i < 100;i++){
-            System.out.println("testi");
-        }
-        for(int i = 0; i < 100;i++){
-            System.out.println("testi");
-        }
-        for(int i = 0; i < 100;i++){
-            System.out.println("testi");
-        }
-        for(int i = 0; i < 100;i++){
-            System.out.println("testi");
-        }
-        for(int i = 0; i < 100;i++){
-            System.out.println("testi");
-        }
-        for(int i = 0; i < 100;i++){
-            System.out.println("testi");
-        }
-        
-    }
-    
     
     public InMemoryUserDao() {
         users = new ArrayList<User>();
